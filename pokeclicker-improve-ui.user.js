@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        [PokeClicker] Improve UI
 // @author      Aurange
-// @version     1.1
+// @version     1.2
 // @match       https://www.pokeclicker.com/
 // ==/UserScript==
 
@@ -12,6 +12,7 @@ let runner = setInterval(function(){
     clearInterval(runner);
 
     document.querySelectorAll("div.card-header[data-toggle]").forEach(e => e.click());
+    ItemHandler.stoneSelected("Leaf_stone");
     EffectEngineRunner.decrementMultiplier();
 
     new MutationObserver(function(mutationList, observer){
